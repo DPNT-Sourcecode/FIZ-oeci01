@@ -48,11 +48,11 @@ public class FizzBuzzSolution {
 
     private boolean isNumberDeluxe(Integer number){
         boolean isDeluxe = true;
-        char[] numbers = number.toString().toCharArray();
+        String[] numbers = number.toString().split("");
         if(numbers.length >1){
-            char firstNumber = numbers[0];
+            String firstNumber = numbers[0];
             for(Integer i =1; i < numbers.length; i++){
-                if (numbers[i] != firstNumber){
+                if (numbers[i].equalsIgnoreCase(firstNumber)){
                     isDeluxe = false;
                     break;
                 }
