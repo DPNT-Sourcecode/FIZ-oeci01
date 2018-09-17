@@ -16,8 +16,14 @@ public class FizzBuzzSolution {
         }
 
         if(result.equalsIgnoreCase("")){
-             return number.toString();
+             result =  number.toString();
         }
+
+        if(result.equalsIgnoreCase("fizzbuzz")){
+             result = "fizz buzz";
+        }
+
+        return result;
 
     }
 
