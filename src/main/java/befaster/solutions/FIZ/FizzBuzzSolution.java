@@ -47,7 +47,7 @@ public class FizzBuzzSolution {
         }
 
         if(result.contains("deluxe") && isFakeDeluxe){
-            result.replaceAll("deluxe" , "fake deluxe");
+            result = result.replaceAll("deluxe" , "fake deluxe");
         }
 
         return result;
