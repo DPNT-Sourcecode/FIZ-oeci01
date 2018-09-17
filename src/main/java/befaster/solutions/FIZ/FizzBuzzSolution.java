@@ -52,7 +52,7 @@ public class FizzBuzzSolution {
         if(numbers.length >1){
             String firstNumber = numbers[0];
             for(Integer i =1; i < numbers.length; i++){
-                if (numbers[i].equalsIgnoreCase(firstNumber)){
+                if (!numbers[i].equalsIgnoreCase(firstNumber)){
                     isDeluxe = false;
                     break;
                 }
