@@ -1,14 +1,13 @@
 package befaster.solutions.FIZZBUZZ;
 
 import befaster.solutions.FIZ.FizzBuzzSolution;
-import befaster.solutions.SUM.SumSolution;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-public class FizzBuzSolutionTest {
+public class FizzBuzSolution2Test {
 
     private FizzBuzzSolution fizzBuzzSolution;
 
@@ -30,6 +29,7 @@ public class FizzBuzSolutionTest {
         assertThat(fizzBuzzSolution.fizzBuzz(45), equalTo("fizz buzz"));
         assertThat(fizzBuzzSolution.fizzBuzz(60), equalTo("fizz buzz"));
         assertThat(fizzBuzzSolution.fizzBuzz(150), equalTo("fizz buzz"));
+        assertThat(fizzBuzzSolution.fizzBuzz(9953), equalTo("fizz buzz"));
         assertThat(fizzBuzzSolution.fizzBuzz(9990), equalTo("fizz buzz"));
     }
 
@@ -38,6 +38,7 @@ public class FizzBuzSolutionTest {
         assertThat(fizzBuzzSolution.fizzBuzz(3), equalTo("fizz"));
         assertThat(fizzBuzzSolution.fizzBuzz(6), equalTo("fizz"));
         assertThat(fizzBuzzSolution.fizzBuzz(9), equalTo("fizz"));
+        assertThat(fizzBuzzSolution.fizzBuzz(31), equalTo("fizz"));
         assertThat(fizzBuzzSolution.fizzBuzz(9999), equalTo("fizz"));
     }
 
@@ -47,6 +48,7 @@ public class FizzBuzSolutionTest {
         assertThat(fizzBuzzSolution.fizzBuzz(10), equalTo("buzz"));
         assertThat(fizzBuzzSolution.fizzBuzz(20), equalTo("buzz"));
         assertThat(fizzBuzzSolution.fizzBuzz(25), equalTo("buzz"));
+        assertThat(fizzBuzzSolution.fizzBuzz(51), equalTo("buzz"));
         assertThat(fizzBuzzSolution.fizzBuzz(9995), equalTo("buzz"));
     }
 }
