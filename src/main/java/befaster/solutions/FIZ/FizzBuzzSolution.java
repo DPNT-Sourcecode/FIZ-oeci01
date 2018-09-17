@@ -20,7 +20,7 @@ public class FizzBuzzSolution {
         }
         if(isNumberDeluxe(number)){
                 isDeluxe = true;
-                if(isFakeDeluxe){
+                if(isNumberFakeDeluxe(number)){
                     isFakeDeluxe = true;
                 }
         }
@@ -46,14 +46,15 @@ public class FizzBuzzSolution {
             result =  number.toString();
         }
 
-
-
+        if(result.contains("deluxe") && isFakeDeluxe){
+            result.replaceAll("deluxe" , "fake deluxe");
+        }
 
         return result;
 
     }
 
-    private boolean isFakeDeluxe(Integer number){
+    private boolean isNumberFakeDeluxe(Integer number){
         return isNumberDeluxe(number) && !isDivisible(number, 2);
     }
 
