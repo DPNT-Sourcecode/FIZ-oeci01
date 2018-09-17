@@ -20,7 +20,7 @@ public class HelloSolutionTest {
 
     @Test
     public void compute_sum_Initial_Range() {
-        assertThat(helloSolution.hello("ahmad"), equalTo("Hello World!"));
+        assertThat(helloSolution.hello("ahmad"), equalTo("Hello, World!"));
     }
 
 
