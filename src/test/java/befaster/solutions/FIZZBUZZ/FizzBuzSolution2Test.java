@@ -25,17 +25,17 @@ public class FizzBuzSolution2Test {
     @Test
     public void multiple_of_3_and_5() {
         assertThat(fizzBuzzSolution.fizzBuzz(546), equalTo("fizz buzz"));
-        assertThat(fizzBuzzSolution.fizzBuzz(9953), equalTo("fizz buzz"));
-        assertThat(fizzBuzzSolution.fizzBuzz(9935), equalTo("fizz buzz"));
+/*        assertThat(fizzBuzzSolution.fizzBuzz(9953), equalTo("fizz buzz"));
+        assertThat(fizzBuzzSolution.fizzBuzz(9935), equalTo("fizz buzz"));*/
     }
 
     @Test
     public void multiple_of_3() {
         assertThat(fizzBuzzSolution.fizzBuzz(3), equalTo("fizz"));
-/*        assertThat(fizzBuzzSolution.fizzBuzz(6), equalTo("fizz"));
+        assertThat(fizzBuzzSolution.fizzBuzz(6), equalTo("fizz"));
         assertThat(fizzBuzzSolution.fizzBuzz(9), equalTo("fizz"));
         assertThat(fizzBuzzSolution.fizzBuzz(31), equalTo("fizz"));
-        assertThat(fizzBuzzSolution.fizzBuzz(9999), equalTo("fizz deluxe"));*/
+        assertThat(fizzBuzzSolution.fizzBuzz(9999), equalTo("fizz deluxe"));
     }
 
     @Test

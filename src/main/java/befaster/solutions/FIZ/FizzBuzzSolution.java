@@ -56,6 +56,8 @@ public class FizzBuzzSolution {
                     break;
                 }
             }
+        }else{
+            isDeluxe = false;
         }
         return isDeluxe;
     }
