@@ -22,9 +22,7 @@ public class FizzBuzzSolution {
         }
 
 
-        if(!isFizz || !isBuzz || !isDeluxe){
-            result =  number.toString();
-        }else{
+        if(isFizz || isBuzz || isDeluxe){
             if(isFizz && !isBuzz && !isDeluxe ){
                 result = "fizz";
             }else if(!isFizz && isBuzz && !isDeluxe ){
@@ -38,7 +36,8 @@ public class FizzBuzzSolution {
             }else if(isFizz && isBuzz && isDeluxe ){
                 result = "fizz buzz deluxe";
             }
-
+        }else{
+            result =  number.toString();
         }
 
 
