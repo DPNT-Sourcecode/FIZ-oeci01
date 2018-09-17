@@ -10,6 +10,7 @@ public class FizzBuzzSolution {
         boolean isFizz = false;
         boolean isBuzz = false;
         boolean isDeluxe = false;
+        boolean isFakeDeluxe = false;
 
         if(isDivisibleByThree(number) || doesContainThree(number)){
             isFizz = true;
@@ -18,7 +19,10 @@ public class FizzBuzzSolution {
             isBuzz = true;
         }
         if(isNumberDeluxe(number)){
-             isDeluxe = true;
+                isDeluxe = true;
+                if(isFakeDeluxe){
+                    isFakeDeluxe = true;
+                }
         }
 
 
@@ -43,8 +47,14 @@ public class FizzBuzzSolution {
         }
 
 
+
+
         return result;
 
+    }
+
+    private boolean isFakeDeluxe(Integer number){
+        return isNumberDeluxe(number) && !isDivisible(number, 2);
     }
 
     private boolean isNumberDeluxe(Integer number){
