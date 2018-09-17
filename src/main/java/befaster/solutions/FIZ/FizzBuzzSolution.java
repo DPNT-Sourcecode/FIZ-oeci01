@@ -35,6 +35,8 @@ public class FizzBuzzSolution {
                 result = "buzz deluxe";
             }else if(isFizz && isBuzz && isDeluxe ){
                 result = "fizz buzz deluxe";
+            }else if(isFizz && isBuzz && !isDeluxe ){
+                result = "fizz buzz";
             }
         }else{
             result =  number.toString();
