@@ -6,15 +6,19 @@ public class FizzBuzzSolution {
 
     public String fizzBuzz(Integer number) {
 
-        if( (isDivisibleByThree(number) &&  isDivisibleByFive(number)) ||  (doesContainThree(number) && doesContainFive(number)) ){
-            return "fizz buzz";
-        }else if(isDivisibleByThree(number) || doesContainThree(number)){
-            return "fizz";
-        }else if (isDivisibleByFive(number) || doesContainFive(number) ){
-            return "buzz";
-        }else {
-            return number.toString();
+        String result = "";
+
+         if(isDivisibleByThree(number) || doesContainThree(number)){
+            result += "fizz";
         }
+        if (isDivisibleByFive(number) || doesContainFive(number) ){
+            result += "buzz";
+        }
+
+        if(result.equalsIgnoreCase("")){
+             return number.toString();
+        }
+
     }
 
     private boolean isDivisible(Integer number, Integer toBeDividedWith){
