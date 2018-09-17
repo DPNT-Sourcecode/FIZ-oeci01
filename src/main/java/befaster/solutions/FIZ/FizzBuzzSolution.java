@@ -7,24 +7,39 @@ public class FizzBuzzSolution {
     public String fizzBuzz(Integer number) {
 
         String result = "";
+        boolean isFizz = false;
+        boolean isBuzz = false;
+        boolean isDeluxe = false;
 
-         if(isDivisibleByThree(number) || doesContainThree(number)){
-            result += "fizz";
+        if(isDivisibleByThree(number) || doesContainThree(number)){
+            isBuzz = true;
         }
         if (isDivisibleByFive(number) || doesContainFive(number) ){
-            result += "buzz";
+            isBuzz = true;
+        }
+        if(isNumberDeluxe(number)){
+             isDeluxe = true;
         }
 
-        if(result.equalsIgnoreCase("")){
-             result =  number.toString();
-        }
 
-        if(result.equalsIgnoreCase("fizzbuzz")){
-             result = "fizz buzz";
-        }
 
         return result;
 
+    }
+
+    private boolean isNumberDeluxe(Integer number){
+        boolean isDeluxe = true;
+        char[] numbers = number.toString().toCharArray();
+        if(numbers.length >1){
+            char firstNumber = numbers[0];
+            for(Integer i =1; i < numbers.length; i++){
+                if (numbers[i] != firstNumber){
+                    isDeluxe = false;
+                    break;
+                }
+            }
+        }
+        return isDeluxe;
     }
 
     private boolean isDivisible(Integer number, Integer toBeDividedWith){
