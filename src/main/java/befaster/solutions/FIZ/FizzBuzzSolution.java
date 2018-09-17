@@ -9,37 +9,41 @@ public class FizzBuzzSolution {
         String result = "";
         boolean isFizz = false;
         boolean isBuzz = false;
-        boolean isDeluxe = false;
+        boolean isFizzDeluxe = false;
+        boolean isBuzzDeluxe = false;
         boolean isFakeDeluxe = false;
 
-        if(isDivisibleByThree(number) || doesContainThree(number)){
+        if(isDivisibleByThree(number)){
             isFizz = true;
+            if(doesContainThree(number)){
+                isFizzDeluxe = true;
+            }
         }
-        if (isDivisibleByFive(number) || doesContainFive(number) ){
+        if (isDivisibleByFive(number)){
             isBuzz = true;
+            if(doesContainFive(number)){
+                isBuzzDeluxe = true;
+            }
         }
-        if(isNumberDeluxe(number)){
-                isDeluxe = true;
+        if(isFizzDeluxe || isBuzzDeluxe){
                 if(isNumberFakeDeluxe(number)){
                     isFakeDeluxe = true;
                 }
         }
 
 
-        if(isFizz || isBuzz || isDeluxe){
-            if(isFizz && !isBuzz && !isDeluxe ){
+        if(isFizz || isBuzz){
+            if(isFizz && !isBuzz && !isFizzDeluxe ){
                 result = "fizz";
-            }else if(!isFizz && isBuzz && !isDeluxe ){
+            }else if(!isFizz && isBuzz && !isBuzzDeluxe ){
                 result = "buzz";
-            }else if(!isFizz && !isBuzz && isDeluxe ){
-                result = "deluxe";
-            }else if(isFizz && !isBuzz && isDeluxe ){
+            }else if(isFizz && !isBuzz && isFizzDeluxe ){
                 result = "fizz deluxe";
-            }else if(!isFizz && isBuzz && isDeluxe ){
+            }else if(!isFizz && isBuzz && isBuzzDeluxe ){
                 result = "buzz deluxe";
-            }else if(isFizz && isBuzz && isDeluxe ){
+            }else if(isFizz && isBuzz && (isFizzDeluxe || isBuzzDeluxe) ){
                 result = "fizz buzz deluxe";
-            }else if(isFizz && isBuzz && !isDeluxe ){
+            }else if(isFizz && isBuzz && (!isFizzDeluxe && !isBuzzDeluxe) ){
                 result = "fizz buzz";
             }
         }else{
@@ -55,10 +59,10 @@ public class FizzBuzzSolution {
     }
 
     private boolean isNumberFakeDeluxe(Integer number){
-        return isNumberDeluxe(number) && !isDivisible(number, 2);
+        return !isDivisible(number, 2);
     }
 
-    private boolean isNumberDeluxe(Integer number){
+/*    private boolean isNumberDeluxe(Integer number){
         boolean isDeluxe = true;
         String[] numbers = number.toString().split("");
         if(numbers.length >1){
@@ -73,7 +77,7 @@ public class FizzBuzzSolution {
             isDeluxe = false;
         }
         return isDeluxe;
-    }
+    }*/
 
     private boolean isDivisible(Integer number, Integer toBeDividedWith){
         return number % toBeDividedWith == 0;
