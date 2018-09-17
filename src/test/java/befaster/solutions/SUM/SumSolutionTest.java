@@ -16,7 +16,12 @@ public class SumSolutionTest {
     }
 
     @Test
-    public void compute_sum() {
+    public void compute_sum_Initial_Range() {
         assertThat(sum.compute(1, 1), equalTo(2));
+    }
+
+    @Test
+    public void compute_sum_Final_Range() {
+        assertThat(sum.compute(100, 100), equalTo(200));
     }
 }
