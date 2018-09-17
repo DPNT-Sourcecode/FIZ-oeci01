@@ -12,7 +12,7 @@ public class FizzBuzzSolution {
         boolean isDeluxe = false;
 
         if(isDivisibleByThree(number) || doesContainThree(number)){
-            isBuzz = true;
+            isFizz = true;
         }
         if (isDivisibleByFive(number) || doesContainFive(number) ){
             isBuzz = true;
@@ -21,6 +21,25 @@ public class FizzBuzzSolution {
              isDeluxe = true;
         }
 
+
+        if(isFizz || isBuzz || isDeluxe){
+            result =  number.toString();
+        }else{
+            if(isFizz && !isBuzz && !isDeluxe ){
+                result = "fizz";
+            }else if(!isFizz && isBuzz && !isDeluxe ){
+                result = "buzz";
+            }else if(!isFizz && !isBuzz && isDeluxe ){
+                result = "deluxe";
+            }else if(isFizz && !isBuzz && isDeluxe ){
+                result = "fizz deluxe";
+            }else if(!isFizz && isBuzz && isDeluxe ){
+                result = "buzz deluxe";
+            }else if(isFizz && isBuzz && isDeluxe ){
+                result = "fizz buzz deluxe";
+            }
+
+        }
 
 
         return result;
