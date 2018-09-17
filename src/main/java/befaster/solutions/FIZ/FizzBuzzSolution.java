@@ -13,15 +13,15 @@ public class FizzBuzzSolution {
         boolean isBuzzDeluxe = false;
         boolean isFakeDeluxe = false;
 
-        if(isDivisibleByThree(number)){
+        if(isDivisibleByThree(number) || doesContainThree(number)){
             isFizz = true;
-            if(doesContainThree(number)){
+            if(isDivisibleByThree(number) && doesContainThree(number)){
                 isFizzDeluxe = true;
             }
         }
-        if (isDivisibleByFive(number)){
+        if (isDivisibleByFive(number) || doesContainFive(number)){
             isBuzz = true;
-            if(doesContainFive(number)){
+            if(isDivisibleByFive(number) && doesContainFive(number)){
                 isBuzzDeluxe = true;
             }
         }
